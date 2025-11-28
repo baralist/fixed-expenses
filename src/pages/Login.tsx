@@ -19,7 +19,7 @@ export default function LoginPage() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'kakao',
       options: {
-        redirectTo: `/`,
+        redirectTo: `${window.location.origin}/`,
       },
     });
     if (error) console.error('Error logging in:', error.message);
